@@ -51,6 +51,8 @@ class SignalCandidate(BaseModel):
     expected_holding_minutes: int = 15
     expected_edge_bps: Optional[float] = None
     reason_codes: List[str]
+    slippage_bps_per_side: Optional[float] = Field(default=None, ge=0.0)
+    cohort: str = "STANDARD"
     feature_version: str = "v1.0"
     data_quality: str = "VALID"
 
